@@ -69,6 +69,7 @@
 
       .task-label {
         cursor: pointer;
+        word-break: break-word;
 
         .task-checkbox {
           margin-right: 10px;
@@ -80,6 +81,7 @@
     }
 
     .delete-button {
+      height: 25px;
       background: transparent;
       color: red;
       border: none;
