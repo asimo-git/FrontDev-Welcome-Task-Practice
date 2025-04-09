@@ -66,5 +66,13 @@
         color: #999;
       }
     }
+
+    .delete-button {
+      background: transparent;
+      color: red;
+      border: none;
+      margin-left: 10px;
+      cursor: pointer;
+    }
   }
 }

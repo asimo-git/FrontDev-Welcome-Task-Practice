@@ -38,6 +38,10 @@ const Todo: React.FC = () => {
     );
   };
 
+  const deleteTask = (id: number) => {
+    setTaskList((prev) => prev.filter((task) => task.id !== id));
+  };
+
   return (
     <div className="todo-container">
       <div className="todo-header">
@@ -70,6 +74,13 @@ const Todo: React.FC = () => {
                 />
                 {task.text}
               </label>
+              <button
+                type="button"
+                onClick={() => deleteTask(task.id)}
+                className="delete-button"
+              >
+                x
+              </button>
             </li>
           ))}
         </ul>
