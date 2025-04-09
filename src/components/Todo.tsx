@@ -30,6 +30,14 @@ const Todo: React.FC = () => {
     setInputValue("");
   };
 
+  const toggleTaskStatus = (id: number) => {
+    setTaskList((prev) =>
+      prev.map((task) =>
+        task.id === id ? { ...task, completed: !task.completed } : task
+      )
+    );
+  };
+
   return (
     <div className="todo-container">
       <div className="todo-header">
@@ -54,8 +62,12 @@ const Todo: React.FC = () => {
         <ul>
           {taskList.map((task) => (
             <li key={task.id} className="task-item">
-              <label>
-                <input type="checkbox" />
+              <label className={task.completed ? "completed" : ""}>
+                <input
+                  type="checkbox"
+                  checked={task.completed}
+                  onChange={() => toggleTaskStatus(task.id)}
+                />
                 {task.text}
               </label>
             </li>

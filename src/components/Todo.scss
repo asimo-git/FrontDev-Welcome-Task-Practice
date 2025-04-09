@@ -60,6 +60,11 @@
 
     .task-item {
       list-style: none;
+
+      .completed {
+        text-decoration: line-through;
+        color: #999;
+      }
     }
   }
 }
