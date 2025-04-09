@@ -56,11 +56,22 @@
     border-radius: 5px;
     padding: 1rem;
 
+    .tasks-ul {
+      padding: 5px;
+    }
+
     .task-item {
       list-style: none;
-      display: flex;
-      justify-content: space-between;
       margin-bottom: 10px;
+
+      .task-date {
+        font-size: 12px;
+      }
+
+      .task-stroke {
+        display: flex;
+        justify-content: space-between;
+      }
 
       .completed {
         text-decoration: line-through;

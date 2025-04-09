@@ -1,11 +1,13 @@
 import React, { useState, FormEvent } from "react";
 import ThemeToggle from "./ThemeToggle";
 import "./Todo.scss";
+import { formatDate } from "../utils";
 
 interface Task {
   id: number;
   text: string;
   completed: boolean;
+  date: string;
 }
 
 const Todo: React.FC = () => {
@@ -23,6 +25,7 @@ const Todo: React.FC = () => {
           id: Date.now(),
           text: inputValue,
           completed: false,
+          date: formatDate(new Date()),
         },
       ]);
     }
@@ -63,27 +66,30 @@ const Todo: React.FC = () => {
       </form>
 
       <div className="tasks-list">
-        <ul>
+        <ul className="tasks-ul">
           {taskList.map((task) => (
             <li key={task.id} className="task-item">
-              <label
-                className={`task-label ${task.completed ? "completed" : ""}`}
-              >
-                <input
-                  className="task-checkbox"
-                  type="checkbox"
-                  checked={task.completed}
-                  onChange={() => toggleTaskStatus(task.id)}
-                />
-                {task.text}
-              </label>
-              <button
-                type="button"
-                onClick={() => deleteTask(task.id)}
-                className="delete-button"
-              >
-                ✕
-              </button>
+              <div className="task-date">{task.date}</div>
+              <div className="task-stroke">
+                <label
+                  className={`task-label ${task.completed ? "completed" : ""}`}
+                >
+                  <input
+                    className="task-checkbox"
+                    type="checkbox"
+                    checked={task.completed}
+                    onChange={() => toggleTaskStatus(task.id)}
+                  />
+                  {task.text}
+                </label>
+                <button
+                  type="button"
+                  onClick={() => deleteTask(task.id)}
+                  className="delete-button"
+                >
+                  ✕
+                </button>
+              </div>
             </li>
           ))}
         </ul>
