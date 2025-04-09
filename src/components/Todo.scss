@@ -57,5 +57,9 @@
     border: 1px dashed #ddd;
     border-radius: 5px;
     padding: 1rem;
+
+    .task-item {
+      list-style: none;
+    }
   }
 }
