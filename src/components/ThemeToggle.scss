@@ -29,16 +29,19 @@
     position: absolute;
     top: 0;
     left: 0;
+    opacity: 1;
     transition: all 0.3s ease;
   }
 
   .sun-icon {
     fill: #ffd700;
-    opacity: 1;
   }
 
   .moon-icon {
     fill: #666;
+  }
+
+  .hidden {
     opacity: 0;
   }
 }
