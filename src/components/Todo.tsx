@@ -66,8 +66,11 @@ const Todo: React.FC = () => {
         <ul>
           {taskList.map((task) => (
             <li key={task.id} className="task-item">
-              <label className={task.completed ? "completed" : ""}>
+              <label
+                className={`task-label ${task.completed ? "completed" : ""}`}
+              >
                 <input
+                  className="task-checkbox"
                   type="checkbox"
                   checked={task.completed}
                   onChange={() => toggleTaskStatus(task.id)}
@@ -79,7 +82,7 @@ const Todo: React.FC = () => {
                 onClick={() => deleteTask(task.id)}
                 className="delete-button"
               >
-                x
+                ✕
               </button>
             </li>
           ))}

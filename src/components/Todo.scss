@@ -60,10 +60,24 @@
 
     .task-item {
       list-style: none;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
 
       .completed {
         text-decoration: line-through;
         color: #999;
+      }
+
+      .task-label {
+        cursor: pointer;
+
+        .task-checkbox {
+          margin-right: 10px;
+          accent-color: green;
+          vertical-align: bottom;
+          transform: scale(1.5);
+        }
       }
     }
 
@@ -71,8 +85,15 @@
       background: transparent;
       color: red;
       border: none;
+      border-radius: 50%;
       margin-left: 10px;
       cursor: pointer;
+      transition: 0.5s ease;
+      font-weight: bold;
+
+      &:hover {
+        background: #dfdddd;
+      }
     }
   }
 }
